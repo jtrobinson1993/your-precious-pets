@@ -3,7 +3,6 @@
     <Header/>
     <main class="site-content">
       <Banner img="https://i.imgur.com/HbXodMk.jpg"/>
-      <CallToAction :heading="ctaHeading" :description="ctaDescription"/>
     </main>
     <Footer/>
   </div>
@@ -14,17 +13,15 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 import Header from "@/components/Header.vue"; // @ is an alias to /src
 import Banner from "@/components/Banner.vue";
 import Footer from "@/components/Footer.vue";
-import CallToAction from "@/components/CallToAction.vue";
 
 @Component({
   components: {
     Header,
     Banner,
-    Footer,
-    CallToAction
+    Footer
   }
 })
-export default class Home extends Vue {
+export default class Contact extends Vue {
   @Prop() ctaHeading!: string;
   @Prop() ctaDescription!: string;
 
