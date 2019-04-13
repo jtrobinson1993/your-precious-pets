@@ -1,7 +1,8 @@
 <template>
   <article class="standard-cta__con">
-    <h1 class="standard-cta__heading">{{heading}}</h1>
+    <h1 class="standard-cta__heading" v-if="heading">{{heading}}</h1>
     <div class="standard-cta__desc">{{description}}</div>
+    <router-link v-if="link" :to="link" class="standard-cta__button site-button site-button__primary">{{buttonText}}</router-link>
   </article>
 </template>
 
@@ -12,6 +13,8 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class CallToAction extends Vue {
   @Prop() private heading!: string;
   @Prop() private description!: string;
+  @Prop() private link!: string;
+  @Prop() private buttonText!: string;
 }
 </script>
 
@@ -21,8 +24,14 @@ export default class CallToAction extends Vue {
 :root {
   .standard-cta {
     &__con {
-        padding: 30px;
+        max-width: $tablet-width;
+        margin: 30px auto;
+        padding: 0 30px;
         text-align: center;
+        @include tablet() {
+            margin: 60px auto;
+            padding: 0 60px;
+        }
     }
 
     &__heading {

@@ -1,5 +1,5 @@
 <template>
-  <div class="contact site-wrapper">
+  <div class="boarding site-wrapper">
     <Header/>
     <main class="site-content">
       <Banner img="https://i.imgur.com/HbXodMk.jpg"/>
@@ -21,7 +21,7 @@ import Footer from "@/components/Footer.vue";
     Footer
   }
 })
-export default class Contact extends Vue {
+export default class Boarding extends Vue {
   @Prop() ctaHeading!: string;
   @Prop() ctaDescription!: string;
 

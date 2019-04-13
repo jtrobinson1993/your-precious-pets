@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
+  <div class="home site-wrapper">
     <Header/>
     <main class="site-content">
       <Banner img="https://i.imgur.com/HbXodMk.jpg"/>
-      <CallToAction :heading="ctaHeading" :description="ctaDescription"/>
+      <CallToAction :heading="ctaHeading" :description="ctaDescription" :link="buttonLink" :buttonText="buttonText"/>
     </main>
     <Footer/>
   </div>
@@ -27,6 +27,14 @@ import CallToAction from "@/components/CallToAction.vue";
 export default class Home extends Vue {
   @Prop() ctaHeading!: string;
   @Prop() ctaDescription!: string;
+
+  get buttonLink() {
+    return '/grooming'
+  }
+
+  get buttonText() {
+    return 'Make an Appointment'
+  }
 
   mounted() {
     this.ctaHeading = "Lincoln's Premier Dog Grooming Salon";

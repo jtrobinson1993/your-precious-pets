@@ -7,10 +7,13 @@
           <router-link to="/" class="site-header__link">Home</router-link>
         </li>
         <li class="site-header__list-item">
-          <router-link to="/pricing" class="site-header__link">Pricing</router-link>
+          <router-link to="/grooming" class="site-header__link">Grooming & Spa</router-link>
         </li>
         <li class="site-header__list-item">
-          <router-link to="/contact" class="site-header__link">Contact</router-link>
+          <router-link to="/boarding" class="site-header__link">Boarding</router-link>
+        </li>
+        <li class="site-header__list-item">
+          <router-link to="/contact" class="site-header__link site-header__link--last">Contact</router-link>
         </li>
       </ul>
     </nav>
@@ -38,6 +41,7 @@ export default class Header extends Vue {}
       width: 100%;
 
       @include desktop() {
+        display: flex;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -50,9 +54,19 @@ export default class Header extends Vue {}
       font-size: ptToRem(32);
       line-height: 1;
       color: $dark-grey;
+
+      @include desktop() {
+        min-width: 300px;
+      }
     }
 
     &__nav {
+      @include desktop() {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        width: 100%;
+      }
     }
 
     &__list {
@@ -60,9 +74,19 @@ export default class Header extends Vue {}
       list-style: none;
       padding: 0;
       text-align: center;
+
+      @include desktop() {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+      }
     }
 
     &__list-item {
+      @include desktop() {
+        display: inline-block;
+        margin-right: 30px;
+      }
     }
 
     &__link {
@@ -76,6 +100,24 @@ export default class Header extends Vue {}
       box-shadow: 1px 1px 5px rgba($dark-grey, 0.15);
       text-decoration: none;
       font-size: ptToRem(14);
+
+      @include desktop() {
+        margin: 0;
+        &:not(.site-header__link--last) {
+          background: transparent;
+          padding: 15px;
+          box-shadow: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &--last {
+        @include desktop() {
+          margin-left: 15px;
+        }
+      }
     }
   }
 }
