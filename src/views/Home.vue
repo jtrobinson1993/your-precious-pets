@@ -3,7 +3,14 @@
     <Header/>
     <main class="site-content">
       <Banner img="https://i.imgur.com/HbXodMk.jpg"/>
-      <CallToAction :heading="ctaHeading" :description="ctaDescription" :link="buttonLink" :buttonText="buttonText"/>
+      <CallToAction :heading="ctaHeadingOne" :description="ctaDescriptionOne"/>
+      <CallToAction
+        :heading="ctaHeadingTwo"
+        :description="ctaDescriptionTwo"
+        class="standard-cta__alternate"
+        :link="buttonLink"
+        :buttonText="buttonText"
+      />
     </main>
     <Footer/>
   </div>
@@ -25,25 +32,39 @@ import CallToAction from "@/components/CallToAction.vue";
   }
 })
 export default class Home extends Vue {
-  @Prop() ctaHeading!: string;
-  @Prop() ctaDescription!: string;
+  
+  get ctaHeadingOne() {
+    return `Lincoln's Premier Dog Grooming Salon`
+  }
+
+  get ctaDescriptionOne() {
+    return `
+    Our salon has four qualified professional groomers who will deliver top-quality haircuts and superb customer service.
+    Locally owned and operated we have been in business the last 5 years and have established ourselves in the community.
+    We invite you and your pet to take a tour of our facility and learn more about us.
+    `
+  }
+
+  get ctaDescriptionTwo() {
+    return `
+    Our salon has four qualified professional groomers who will deliver top-quality haircuts and superb customer service.
+    Locally owned and operated we have been in business the last 5 years and have established ourselves in the community.
+    We invite you and your pet to take a tour of our facility and learn more about us.
+    `
+  }
+
+  get ctaHeadingTwo() {
+    return `Lincoln's Premier Dog Grooming Salon`
+  }
 
   get buttonLink() {
-    return '/grooming'
+    return '/contact'
   }
 
   get buttonText() {
     return 'Make an Appointment'
   }
 
-  mounted() {
-    this.ctaHeading = "Lincoln's Premier Dog Grooming Salon";
-    this.ctaDescription = `
-    Our salon has four qualified professional groomers who will deliver top-quality haircuts and superb customer service.
-    Locally owned and operated we have been in business the last 5 years and have established ourselves in the community.
-    We invite you and your pet to take a tour of our facility and learn more about us.
-    `;
-  }
 }
 </script>
 

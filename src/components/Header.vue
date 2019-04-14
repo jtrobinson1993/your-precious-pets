@@ -1,11 +1,8 @@
 <template>
   <header class="site-header">
-    <h1 class="site-header__title">Your Precious Pets</h1>
+    <h1 class="site-header__title"><router-link to="/" class="site-header__title-link">Your Precious Pets</router-link></h1>
     <nav class="site-header__nav">
       <ul class="site-header__list">
-        <li class="site-header__list-item">
-          <router-link to="/" class="site-header__link">Home</router-link>
-        </li>
         <li class="site-header__list-item">
           <router-link to="/grooming" class="site-header__link">Grooming & Spa</router-link>
         </li>
@@ -39,6 +36,7 @@ export default class Header extends Vue {}
       top: 0;
       left: 0;
       width: 100%;
+      z-index: 9;
 
       @include desktop() {
         display: flex;
@@ -53,10 +51,14 @@ export default class Header extends Vue {}
       padding: 30px;
       font-size: ptToRem(32);
       line-height: 1;
-      color: $dark-grey;
 
       @include desktop() {
-        min-width: 300px;
+        min-width: 360px;
+      }
+
+      &-link {
+        color: $dark-grey;
+        text-decoration: none;
       }
     }
 

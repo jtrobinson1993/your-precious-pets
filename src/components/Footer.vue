@@ -13,7 +13,7 @@ export default class Footer extends Vue {
     get currentYear() {
       return new Date().getFullYear().toString();
     }
-    
+
 }
 </script>
 
@@ -26,6 +26,9 @@ export default class Footer extends Vue {
       padding: 30px;
       text-align: center;
       font-size: ptToRem(14);
+      @include desktop() {
+        padding: 60px;
+      }
     }
   }
 }

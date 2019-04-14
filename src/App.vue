@@ -8,6 +8,10 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Waiting+for+the+Sunrise");
 @import "./styles/base-import";
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -15,17 +19,21 @@ body {
 }
 
 body {
-  font-family: "Quicksand", Helvetica, Arial, sans-serif;
+  font-family: $body-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 100%;
 }
 
+a {
+  color: $dark-grey;
+  font-weight: 500;
+}
+
 h1,
 h2,
 h3 {
-  font-family: "Waiting for the Sunrise", "Quicksand", Helvetica, Arial,
-    sans-serif;
+  font-family: $logo-font;
 }
 
 .site-wrapper {
