@@ -27,7 +27,7 @@ import CallToAction from "@/components/CallToAction.vue";
 export default class Boarding extends Vue {
 
   get ctaHeadingOne() {
-    return `Boarding`
+    return `Boarding & Daycare`
   }
 
   get ctaDescriptionOne() {
