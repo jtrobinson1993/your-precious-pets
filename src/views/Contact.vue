@@ -24,6 +24,11 @@
             </li>
           </ul>
         </address>
+        <h2 class="hours__heading">Hours of Operation</h2>
+        <ul class="hours__list">
+          <li><strong>Mon - Fri</strong> 7:30 am - 6:00 pm</li>
+          <li><strong>Sat</strong> 8:30 am - 5:00 pm</li>
+        </ul>
       </div>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2285089672964!2d-96.7006523845937!3d40.756998579327096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87969585aa95f6eb%3A0x44024d3124102476!2s1600+Normandy+Ct+%23400%2C+Lincoln%2C+NE+68512!5e0!3m2!1sen!2sus!4v1555201646316!5m2!1sen!2sus"
@@ -94,7 +99,7 @@ export default class Contact extends Vue {}
       color: $dark-grey;
       margin: 0 0 0.67em;
       line-height: 1.2;
-      font-family:  $body-font;
+      font-family: $body-font;
       @include desktop() {
         font-size: ptToRem(28);
       }
@@ -118,6 +123,41 @@ export default class Contact extends Vue {}
 
         &:first-child {
           @include desktop() {
+            margin-right: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  .hours {
+    &__heading {
+      font-size: ptToRem(18);
+      font-weight: bold;
+      font-family: $body-font;
+      margin: 30px 0 .67em;
+      line-height: 1.4;
+
+      @include desktop() {
+        font-size: ptToRem(22);
+      }
+    }
+
+    &__list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      line-height: 1.4;
+
+      @include desktop() {
+        display: flex;
+      }
+
+      li {
+        @include desktop() {
+          flex: 1 1 50%;
+
+          &:first-child {
             margin-right: 60px;
           }
         }

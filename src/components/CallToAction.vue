@@ -2,7 +2,7 @@
   <article class="standard-cta__con">
     <div class="standard-cta__inner">
       <h1 class="standard-cta__heading" v-if="heading">{{heading}}</h1>
-      <div class="standard-cta__desc">{{description}}</div>
+      <div class="standard-cta__desc" v-html="description"></div>
       <router-link
         v-if="link"
         :to="link"
@@ -30,6 +30,11 @@ export default class CallToAction extends Vue {
 :root {
   .standard-cta {
     &__con {
+      &:not(.standard-cta__alternate):last-child {
+        .standard-cta__inner {
+          padding-bottom: 0;
+        }
+      }
     }
 
     &__inner {

@@ -4,13 +4,6 @@
     <main class="site-content">
       <Banner img="https://i.imgur.com/HbXodMk.jpg"/>
       <CallToAction :heading="ctaHeadingOne" :description="ctaDescriptionOne"/>
-      <CallToAction
-        :heading="ctaHeadingTwo"
-        :description="ctaDescriptionTwo"
-        class="standard-cta__alternate"
-        :link="buttonLink"
-        :buttonText="buttonText"
-      />
     </main>
     <Footer/>
   </div>
@@ -32,39 +25,18 @@ import CallToAction from "@/components/CallToAction.vue";
   }
 })
 export default class Home extends Vue {
-  
   get ctaHeadingOne() {
-    return `Lincoln's Premier Dog Grooming Salon`
+    return `About Us`;
   }
 
   get ctaDescriptionOne() {
     return `
-    Our salon has four qualified professional groomers who will deliver top-quality haircuts and superb customer service.
-    Locally owned and operated we have been in business the last 5 years and have established ourselves in the community.
-    We invite you and your pet to take a tour of our facility and learn more about us.
-    `
+    <p>Your Precious Pets has been a staple in Lincoln’s southwest side for over 10 years now. We welcome clients from all walks of life: your puppies and your old pups, your hard working ranch dogs and your ever loyal companions at home. Everyone is welcome to our unique open-kennel shop and we’ll work with you to meet all of your unique needs.</p>
+    <p>As an open-kennel shop, it’s important to us to know the personalities of our clients. We’ll ease new pups into the setting and do have areas that we can separate dogs into as necessary. With our attentive staff, your fur-kids are always supervised so everyone can have a safe and positive grooming experience.</p>
+    <p>For our daycare and boarding friends, it’s a similar story. Everyone gets to be out and about to play their heart’s content, and by the time we turn our lights out and tuck your pups into their sleeping quarters, they’re ready for a good night’s sleep.</p>
+    <p>Our clients are important to us and dogs are our passion! Swing by and say hello!</p>
+    `;
   }
-
-  get ctaDescriptionTwo() {
-    return `
-    Our salon has four qualified professional groomers who will deliver top-quality haircuts and superb customer service.
-    Locally owned and operated we have been in business the last 5 years and have established ourselves in the community.
-    We invite you and your pet to take a tour of our facility and learn more about us.
-    `
-  }
-
-  get ctaHeadingTwo() {
-    return `Lincoln's Premier Dog Grooming Salon`
-  }
-
-  get buttonLink() {
-    return '/contact'
-  }
-
-  get buttonText() {
-    return 'Make an Appointment'
-  }
-
 }
 </script>
 

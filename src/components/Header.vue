@@ -4,10 +4,10 @@
     <nav class="site-header__nav">
       <ul class="site-header__list">
         <li class="site-header__list-item">
-          <router-link to="/grooming" class="site-header__link">Grooming & Spa</router-link>
+          <router-link to="/grooming" class="site-header__link">Grooming</router-link>
         </li>
         <li class="site-header__list-item">
-          <router-link to="/boarding" class="site-header__link">Boarding</router-link>
+          <router-link to="/boarding" class="site-header__link">Boarding & Daycare</router-link>
         </li>
         <li class="site-header__list-item">
           <router-link to="/contact" class="site-header__link site-header__link--last">Contact</router-link>
