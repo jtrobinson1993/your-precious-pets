@@ -1,7 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-const VueAnalytics = require("../node_modules/vue-analytics");
+// tslint:disable-next-line
+import VueAnalytics from 'vue-analytics';
 
 Vue.use(Router);
 
@@ -94,6 +95,11 @@ const router = new Router({
 
 });
 
+Vue.use(VueAnalytics, {
+  id: 'UA-138417663-1',
+  router
+});
+
 // This callback runs before every route change, including on page load.
 router.beforeEach((to, from, next) => {
   // This goes through the matched routes from last to first, finding the closest route with a title.
@@ -131,10 +137,5 @@ router.beforeEach((to, from, next) => {
 
   next();
 });
-
-Vue.use(VueAnalytics, {
-  id: 'UA-138417663-1',
-  router
-})
 
 export default router;
