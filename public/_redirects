@@ -1,4 +1,4 @@
-/*    /index.html   200
-
 # Redirect default Netlify subdomain to primary domain
 https://yourpreciouspets.netlify.com/* https://www.yourpreciouspetsne.com/:splat 301!
+
+/*    /index.html   200
