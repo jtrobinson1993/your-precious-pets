@@ -27,10 +27,10 @@ export default class HelloWorld extends Vue {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      opacity: .5;
+      opacity: .6;
       transition: opacity .6s ease;
       @include desktop() {
-        opacity: .75;
+        opacity: .9;
       }
 
       &:after {
