@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Waiting+for+the+Sunrise");
+@import "./styles/base-import";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $body-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
+}
+
+a {
+  color: $dark-grey;
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $logo-font;
+}
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-content {
+  flex: 1 0 auto;
+}
+
+.site-button {
+  & {
+    display: inline-block;
+    padding: 15px 30px;
+    line-height: 1.4;
+    color: $white;
+    background: $grey;
+    margin: 30px 0 0;
+    text-decoration: none;
+    border-radius: 100px;
+  }
+
+  &__primary {
+    background: $primary;
+  }
+}
+
+.site-header {
+  & {
+    max-width: $desktop-width;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+
+    @include desktop() {
+      display: flex;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+    padding: 30px;
+    font-size: ptToRem(32);
+    line-height: 1;
+
+    @include desktop() {
+      min-width: 360px;
+    }
+
+    &-link {
+      color: $dark-grey;
+      text-decoration: none;
+    }
+  }
+
+  &__nav {
+    @include desktop() {
+      display: flex;
+      flex: 1 1 auto;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+
+    @include desktop() {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  &__list-item {
+    @include desktop() {
+      display: inline-block;
+      margin-right: 30px;
+    }
+  }
+
+  &__link {
+    color: $dark-grey;
+    padding: 15px 45px;
+    display: inline-block;
+    background: $white;
+    margin: 15px 0;
+    min-width: 75px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px rgba($dark-grey, 0.15);
+    text-decoration: none;
+    font-size: ptToRem(14);
+
+    @include desktop() {
+      margin: 0;
+      &:not(.site-header__link--last) {
+        background: transparent;
+        padding: 15px;
+        box-shadow: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &--last {
+      @include desktop() {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+.site-banner {
+  &__con {
+  }
+  &__img {
+    width: 100%;
+    height: 50vh;
+    min-height: 420px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .6;
+    transition: opacity .6s ease;
+    @include desktop() {
+      opacity: .9;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(#fff, 0.9),
+        rgba(#fff, 0.7)
+      );
+    }
+  }
+}
+
+.site-content {
+  font-size: ptToRem(14);
+  line-height: 1.7;
+}
+
+.contact {
+  &__map {
+    width: 100%;
+    height: 360px;
+    background-color: $light-grey;
+    @include desktop() {
+      height: 460px;
+    }
+  }
+
+  &__address-con {
+    max-width: $tablet-width;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 30px;
+
+    @include desktop() {
+      margin: 60px auto;
+      padding: 0 60px;
+    }
+  }
+
+  &__address-heading {
+    font-size: ptToRem(24);
+    color: $dark-grey;
+    margin: 0 0 0.67em;
+    line-height: 1.2;
+    font-family: $body-font;
+    @include desktop() {
+      font-size: ptToRem(28);
+    }
+  }
+
+  &__address {
+    font-style: normal;
+    line-height: 1.4;
+    @include desktop() {
+      display: flex;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      @include desktop() {
+        flex: 1 1 50%;
+      }
+
+      &:first-child {
+        @include desktop() {
+          margin-right: 60px;
+        }
+      }
+    }
+  }
+}
+
+.hours {
+  &__heading {
+    font-size: ptToRem(18);
+    font-weight: bold;
+    font-family: $body-font;
+    margin: 30px 0 0.67em;
+    line-height: 1.4;
+
+    @include desktop() {
+      font-size: ptToRem(22);
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: 1.4;
+
+    @include desktop() {
+      display: flex;
+    }
+
+    li {
+      @include desktop() {
+        flex: 1 1 50%;
+
+        &:first-child {
+          margin-right: 60px;
+        }
+      }
+    }
+  }
+}
+
+.standard-cta {
+  &__con {
+    &:not(.standard-cta__alternate):last-child {
+      .standard-cta__inner {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__inner {
+    max-width: $tablet-width;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    @include tablet() {
+      padding: 60px;
+    }
+  }
+
+  &__heading {
+    font-size: ptToRem(24);
+    color: $dark-grey;
+    margin: 0 0 0.67em;
+    line-height: 1.2;
+    @include desktop() {
+      font-size: ptToRem(28);
+    }
+  }
+  &__desc {
+  }
+  &__alternate {
+    background-color: $light-grey;
+  }
+}
+
+.site-footer {
+  &__con {
+    padding: 30px;
+    text-align: center;
+    font-size: ptToRem(14);
+    @include desktop() {
+      padding: 60px;
+    }
+  }
+}
